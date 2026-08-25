@@ -10,42 +10,29 @@ workflows:
       - name: Fix v1 embedding packages
         script: |
           python3 << 'PYEOF'
-          # تحديث pubspec.yaml لاستبدال الحزم القديمة
           content = open('pubspec.yaml').read()
 
-          # تحديث Firebase packages
           content = content.replace('firebase_core: ^2.27.0', 'firebase_core: ^3.8.1')
           content = content.replace('cloud_firestore: ^4.15.8', 'cloud_firestore: ^5.6.0')
-
-          # استبدال flutter_image_compress بالنسخة الخفيفة
           content = content.replace('flutter_image_compress: ^2.2.0', 'flutter_image_compress_lite: ^2.9.2')
-
-          # تحديث باقي الحزم
           content = content.replace('image_picker: ^1.0.7', 'image_picker: ^1.1.2')
           content = content.replace('shared_preferences: ^2.2.2', 'shared_preferences: ^2.3.4')
           content = content.replace('flutter_lints: ^3.0.0', 'flutter_lints: ^5.0.0')
 
           open('pubspec.yaml', 'w').write(content)
           print("Updated pubspec.yaml")
-          print(content)
           PYEOF
 
       - name: Fix Dart imports
         script: |
-          # تحديث import في image_service.dart
           sed -i '' 's/package:flutter_image_compress\/flutter_image_compress.dart/package:flutter_image_compress_lite\/flutter_image_compress_lite.dart/' lib/services/image_service.dart
-
-          # تحديث CACHE_SIZE_UNLIMITED في firebase_service.dart
           sed -i '' 's/cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED/cacheSizeBytes: -1/' lib/services/firebase_service.dart
-
           echo "Fixed Dart imports"
 
       - name: Update Firebase BOM
         script: |
-          # تحديث Firebase BOM في build.gradle
           sed -i '' 's/firebase-bom:32.7.0/firebase-bom:33.7.0/' android/app/build.gradle
           echo "Updated Firebase BOM"
-          cat android/app/build.gradle
 
       - name: Get dependencies
         script: |
