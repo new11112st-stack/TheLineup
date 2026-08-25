@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- خلفية الإطلاق — داكنة مطابقة للتصميم -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white" />
+    <!-- يمكن استبدالها بلون داكن: -->
+    <!-- <item><color android:color="#0B0F0C"/></item> -->
+</layer-list>

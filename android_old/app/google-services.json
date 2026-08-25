@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "761292662915",
+    "project_id": "the-neup",
+    "storage_bucket": "the-neup.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761292662915:android:eea29177e01985884513b6",
+        "android_client_info": {
+          "package_name": "com.takweela.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjlfx6hxD-nLllA5TNnXhh3jo0TY2lCbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

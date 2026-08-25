@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- دائرة خضراء -->
+    <path
+        android:fillColor="#5EE089"
+        android:pathData="M54,54m-35,0a35,35 0,1 1,70 0a35,35 0,1 1,-70 0" />
+    <!-- نجمة خماسية غامقة -->
+    <path
+        android:fillColor="#0B0F0C"
+        android:pathData="M54,30L62,49L82,49L66,62L72,82L54,71L36,82L42,62L26,49L46,49Z" />
+</vector>
